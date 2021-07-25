@@ -1,0 +1,101 @@
+//variables
+
+$Strong-Cyan: hsl(171, 66%, 44%);
+$Light-Blue: hsl(233, 100%, 69%);
+
+$Dark-Grayish-Blue: hsl(210, 10%, 33%);
+$Grayish-Blue: hsl(201, 11%, 66%);
+
+//reset
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+p {
+  line-height: 1.6;
+}
+
+//
+
+header {
+  background-image: url("./img/bg-header-desktop.png");
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 6rem 0rem;
+  & h1 {
+    margin-bottom: 1rem;
+    color: $Dark-Grayish-Blue;
+  }
+  & p {
+    margin-bottom: 4rem;
+    color: $Grayish-Blue;
+  }
+}
+
+.logo {
+  margin-bottom: 4rem;
+}
+
+.btns {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  & button {
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px 5px rgba(128, 128, 128, 0.212);
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+
+  & > button:nth-child(1) {
+    background-color: $Strong-Cyan;
+    //-right: 1rem;
+  }
+
+  & > button:nth-child(2) {
+    background-color: $Light-Blue;
+    //margin-left: 1rem;
+  }
+}
+
+//media
+@media screen and (max-width: 1200px) {
+  header {
+    padding: 6rem 2rem;
+  }
+  .btns {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    background-image: url("./img/bg-header-mobile.png");
+    background-size: cover;
+    background-position: center;
+  }
+  .btns {
+    width: 90%;
+    flex-direction: column;
+    & > * {
+      margin-top: 1rem;
+    }
+  }
+}
