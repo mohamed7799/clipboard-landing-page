@@ -21,6 +21,35 @@ body {
 
 p {
   line-height: 1.6;
+  color: $Grayish-Blue;
+  margin-bottom: 4rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h1,
+h2 {
+  margin-bottom: 1rem;
+  color: $Dark-Grayish-Blue;
+}
+
+section {
+  margin-top: 5rem;
+}
+
+//
+
+.center-title {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 //
@@ -28,20 +57,12 @@ p {
 header {
   background-image: url("./img/bg-header-desktop.png");
   background-repeat: no-repeat;
-  text-align: center;
   padding: 6rem 0rem;
-  & h1 {
-    margin-bottom: 1rem;
-    color: $Dark-Grayish-Blue;
-  }
-  & p {
-    margin-bottom: 4rem;
-    color: $Grayish-Blue;
-  }
 }
 
 .logo {
   margin-bottom: 4rem;
+  text-align: center;
 }
 
 .btns {
@@ -66,26 +87,60 @@ header {
 
   & > button:nth-child(1) {
     background-color: $Strong-Cyan;
-    //-right: 1rem;
   }
 
   & > button:nth-child(2) {
     background-color: $Light-Blue;
-    //margin-left: 1rem;
+  }
+}
+
+.track-sec {
+  & > h2,
+  & > p {
+    text-align: center;
+  }
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  & > * {
+    flex: 1;
+  }
+}
+
+.img {
+  transform: translateX(-30px);
+}
+
+.text {
+  padding: 5rem;
+  & h3 {
+    margin-bottom: 1rem;
   }
 }
 
 //media
 @media screen and (max-width: 1200px) {
+  .center-title {
+    width: 100%;
+  }
+  //
   header {
     padding: 6rem 2rem;
   }
   .btns {
     width: 60%;
   }
+
+  //
 }
 
 @media screen and (max-width: 800px) {
+  .center-title {
+    width: 100%;
+  }
+  //
   header {
     background-image: url("./img/bg-header-mobile.png");
     background-size: cover;
@@ -97,5 +152,25 @@ header {
     & > * {
       margin-top: 1rem;
     }
+  }
+  //
+
+  .track-sec {
+    padding: 0rem 1rem;
+  }
+
+  .img-container {
+    flex-direction: column;
+  }
+
+  .img {
+    transform: none;
+    & img {
+      width: 100%;
+    }
+  }
+  .text {
+    margin-top: 4rem;
+    text-align: center;
   }
 }
